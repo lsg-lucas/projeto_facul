@@ -1,0 +1,97 @@
+<div class="card bg-dark text-white">
+    <img class="card-img" src="../img/logo.geral.png.jpeg" alt="Imagem do card"  >
+    <div class="card-img-overlay" >
+      <div class="cad-cli" style="text-align: center;">
+        <h1 class="nomeprinci">Cadastro de Clientes.</h1><br><br>
+        <h5 class="card-text">Realize seu cadastro para receber e-mails de promoção e ficar por dentro das novas tendências.</h5><br><br>
+      </div>
+        <div class="imput-cadastro">
+            <form class="needs-validation" id="formulario" name="formulario" novalidate>
+              <input type="hidden" name="id_cli" id="id_cli" value="">
+              <input type="hidden" name="id_endereco" id="id_endereco" value="">
+                <div class="form-row" id="todos">
+                  <div class="col-md-4 mb-3 animate pop">
+                    <label>Nome:</label>
+                    <input type="text" required class="form-control limpar" name="nome" onkeydown="validarNome(event)" id="nome" placeholder="Digite">
+                    <div class="valid-feedback">
+                      Tudo certo!
+                    </div>
+                  </div>
+                  <div class="col-md-2 mb-3 animate pop delay-1">
+                    <label for="validationCustom02">Telefone:</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroupPrepend"><i class="fa fa-phone"></i></span>
+                      </div>
+                      <input type="text" class="form-control telefone limpar" id="telefone" name="telefone" placeholder="Digite">
+                    </div>
+                    <div class="valid-feedback">
+                      Tudo certo!
+                    </div>
+                  </div>
+                  <div class="col-md-2 mb-3 animate pop delay-2">
+                    <label for="validationCustom02">Celular:</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroupPrepend"><i class="fa fa-mobile"></i></span>
+                      </div>
+                      <input type="text" class="form-control telefone limpar" id="celular" name="celular" placeholder="Digite">
+                    </div>
+                    <div class="valid-feedback">
+                      Tudo certo!
+                    </div>
+                  </div>
+                  <div class="col-md-4 mb-3 animate pop delay-3">
+                    <label for="validationCustomUsername">Email:</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroupPrepend">@</span>
+                      </div>
+                      <input type="email" name="email" class="form-control limpar" id="email" name="email" placeholder="Digite" aria-describedby="inputGroupPrepend">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="col-md-2 mb-3 animate pop delay-4">
+                    <label for="cep">CEP:</label>
+                    <input type="text" onkeyup="mascaraCEP(event)" class="form-control limpar" name="cep" id="cep" placeholder="Digite">
+                  </div>
+                  <div class="col-md-3 mb-3 animate pop delay-5">
+                    <label for="validationCustom03">Endereço:</label>
+                    <input type="text" class="form-control limpar" id="logradouro" name="logradouro" placeholder="Digite">
+                  </div>
+                  <div class="col-md-1 mb-3 animate pop delay-6">
+                    <label for="numero">Nº:</label>
+                    <input type="text" onkeyup="apenasNumeros(event)" class="form-control limpar" id="numero" name="numero" placeholder="Digite">
+                  </div>
+                  <div class="col-md-2 mb-3 animate pop delay-7">
+                    <label for="cidade">Cidade:</label>
+                    <input type="text" class="form-control limpar" id="cidade" name="cidade" placeholder="Digite">
+                  </div>
+                  <div class="col-md-2 mb-3 animate pop delay-8">
+                    <label for="estado">Estado:</label>
+                    <input type="text" class="form-control limpar" id="estado" name="estado" placeholder="Digite">
+                  </div>
+                  <div class="col-md-2 mb-3 animate pop delay-9">
+                    <label for="bairro">Bairro:</label>
+                    <input type="text" class="form-control limpar" id="bairro" name="bairro" placeholder="Digite">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <br><br>
+                </div><br>
+                <div class="botao-cli" style="text-align: center;">
+                  <button type="button" class="btn btn-success btn-lg" id="btn-salvar" onclick="salvarCliente()">Salvar</button>
+                  <button type="button" class="btn btn-secondary btn-lg" id="btn-clientes" onclick="AtualizarGridCliente()">Ver Clientes</button>
+                </div>
+              <div style="text-align: center; padding: 60px" >
+                <h3 class="nomeprinci" style="color: gold"><strong> Avalie-nos!</strong></h3>
+                <p>"Faça sua avaliação no google e ganhe 20% de desconto em qualquer serviço"</p>
+                <a class="btn btn-primary btn-sm" type="button" target="_blank" href="https://www.google.com/search?q=mathico+tattoo&sxsrf=APwXEdekTuLX-aDXZzXVZJiZAfO_KPgQjA%3A1686237849073&source=hp&ei=mfKBZM6LAvPT5OUPzKqkwAU&iflsig=AOEireoAAAAAZIIAqcYvbNkQvyBcfnFMF8HYNVAvSTYw&ved=0ahUKEwiOvP6__bP_AhXzKbkGHUwVCVgQ4dUDCAg&uact=5&oq=mathico+tattoo&gs_lcp=Cgdnd3Mtd2l6EAMyBQghEKABMgUIIRCgAToHCCMQigUQJzoUCC4QgAQQsQMQgwEQxwEQ0QMQ1AI6CwgAEIAEELEDEIMBOgsILhCABBCxAxCDAToOCC4QxwEQsQMQ0QMQgAQ6CAgAEIAEELEDOgUIABCABDoLCC4QigUQsQMQgwE6DQgAEIoFELEDEIMBEEM6BwgAEIoFEEM6DQguEIoFEMcBENEDEEM6BwguEIoFEEM6CggAEIoFELEDEEM6CAguEIAEELEDOgsILhCABBDHARCvAToNCAAQgAQQsQMQgwEQCjoKCAAQgAQQsQMQCjoHCAAQgAQQCjoECAAQHjoGCAAQHhAKOgcIABATEIAEOgUIABCiBFAAWKEiYOEjaAFwAHgBgAHEAYgBvhGSAQQxLjE2mAEAoAEB&sclient=gws-wiz#rlimm=16461724452417882782"><i class="fa fa-google"></i> Google</a>
+              </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="../js/cadastro.js"></script>
+
